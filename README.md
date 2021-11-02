@@ -38,8 +38,8 @@
  > apt install nodejs -y
  > apt install ffmpeg -y
  > apt install imagemagick -y
- > git clone https://github.com/Oreki-san/Eru-Bot
- > cd Eru-Bot
+ > git clone  https://github.com/amal-dx/DXTROX-v2
+ > cd DXTROX-v2
  > npm install 
  > node . [session-name] 
  ```
