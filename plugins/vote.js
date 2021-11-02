@@ -1,5 +1,5 @@
 const fs = require('fs');
-const voting = JSON.parse(fs.readFileSync('./lib/voting.json'))
+const voting = JSON.parse(fs.readFileSync('./plugins/voting.json'))
 
 const sleep = async (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
