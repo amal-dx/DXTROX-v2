@@ -1,10 +1,10 @@
 let handler = async m => m.reply(`
 📪 *Info* 📪
 
-*Bot :* Eru chitanda
+*Bot :* DXTROX-v2
 
 _Note : This is customised bot_
-_Edited by : Redbee🐝❤_
+_Edited by : Amal-dx_
 
 
 💫 *Command :* bannedlist
