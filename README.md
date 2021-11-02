@@ -1,5 +1,3 @@
-<div align="center">
-
 <h1 align="center">Hello Dude🙋🏻‍♀️Welcome to my Repo <img src="https://user-images.githubusercontent.com/1303154/88677602-1635ba80-d120-11ea-84d8-d263ba5fc3c0.gif" width="40px" alt="hi"><br>
 <p align="center">
 
@@ -61,7 +59,7 @@ alt="Chitanda eru bot" border="0">
  👤  **Amal-dx**
 * Github : https://github.com/amal-dx/DXTROX-v2
 * Instagram : [@ig_oreki](https://instagram.com/ig_oreki)
-* WhatsApp : wa.me/917736308760
+* WhatsApp : https://wa.me/917736308760
 
 
 
