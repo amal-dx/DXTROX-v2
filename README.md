@@ -19,9 +19,9 @@
 ##  ![WhatsApp Group](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white) [![NodeJs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/)
 
 
-## 🎗 Self-Hosting
+## 🎗 Heroku deploying
  
- #### **Hosting on Heroku**
+ #### **deploying on Heroku**
  Simple WhatsApp Bot
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/amal-dx/DXTROX-v2)
