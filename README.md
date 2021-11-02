@@ -26,8 +26,8 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/amal-dx/DXTROX-v2)
 
-### 📌 Hosting Guide
-- Click Here > [Eru-Guide](https://github.com/Oreki-san/Eru-Guide/blob/main/README.md)
+### 📌 Heroku deploying Guide
+- Click Here > [heroku-Guide](https://github.com/amal-dx/heroku-guide/blob/main/README.md)
  
  ## 🍀 Installation
  
@@ -48,13 +48,7 @@
  - As you know there are lots of missing files in /plugins and If you want to contribute please consider Doing PRs thank you
  
  
- ## 👥 Authors
- 
- 👤 **Nurutomo**
- 
- * Github : https://github.com/Nurutomo
- 
- ### Editor 
+ ## 👥 Developer
  👤  **Amal-dx**
 * Github : https://github.com/amal-dx/DXTROX-v2
 * Instagram : [@ig_oreki](https://instagram.com/ig_oreki)
