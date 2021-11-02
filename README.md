@@ -12,7 +12,7 @@
 
 <div align="center">
   <img src=http://telegra.ph/file/68809ff84d7cd4447a76e.jpg>
-<img src="https://i.imgur.com/4tRKOcz.png" 
+ 
 alt="Chitanda eru bot" border="0">
 
 
