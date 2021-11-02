@@ -1,5 +1,5 @@
 let handler = async m => m.reply(`
-ヽ(✿ ͜ʖ✿)ﾉ Konichuwa , Watasi no namae Chitanda eru desu🌸
+ヽ(✿ ͜ʖ✿)ﾉ DXTROX-v2🌸
 
 
 🌼 Here's Command Menu 🌼
