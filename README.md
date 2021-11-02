@@ -58,11 +58,10 @@ alt="Chitanda eru bot" border="0">
  * Github : https://github.com/Nurutomo
  
  ### Editor 
- 👤  **JJ Oreki**
-* Github : https://github.com/Oreki-san
-* Twitter: [@haremgodoreki](https://twitter.com/@haremgodoreki)
+ 👤  **Amal-dx**
+* Github : https://github.com/amal-dx/DXTROX-v2
 * Instagram : [@ig_oreki](https://instagram.com/ig_oreki)
-* WhatsApp : [wa.me/919002370263]
+* WhatsApp : wa.me/917736308760
 
 
 
