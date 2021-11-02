@@ -11,7 +11,6 @@
 <div align="center">
   <img src=http://telegra.ph/file/68809ff84d7cd4447a76e.jpg>
  
-alt="Chitanda eru bot" border="0">
 
 
 # **DXTROX-V2 whatsapp bot**
