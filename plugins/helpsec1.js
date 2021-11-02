@@ -1,5 +1,6 @@
 let handler = async m => m.reply(`
-*ヽ(✿ ͜ʖ✿)ﾉ Konichuwa, Watasi no namae Chitanda eru desu🌸*
+*✿ DXTROX-v2 Whatsapp bot 🌸*
+   *Developed by Amal*
 
 
 🌼 *Here's Command Menu* 🌼
