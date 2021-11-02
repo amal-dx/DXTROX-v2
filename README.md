@@ -51,7 +51,6 @@
  ## 👥 Developer
  👤  **Amal-dx**
 * Github : https://github.com/amal-dx/DXTROX-v2
-* Instagram : [@ig_oreki](https://instagram.com/ig_oreki)
 * WhatsApp : https://wa.me/917736308760
 
 
