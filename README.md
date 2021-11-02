@@ -1,4 +1,17 @@
 <div align="center">
+
+<h1 align="center">Hello Dude🙋🏻‍♀️Welcome to my Repo <img src="https://user-images.githubusercontent.com/1303154/88677602-1635ba80-d120-11ea-84d8-d263ba5fc3c0.gif" width="40px" alt="hi"><br>
+<p align="center">
+
+## 📢Introduce myself
+
+- 🙂I'm Amal
+- 🚩I'm a beginner in this field
+- 📍From pathripala,palakkad,Kerala,🇮🇳
+- 🏫Students
+
+<div align="center">
+  <img src=http://telegra.ph/file/68809ff84d7cd4447a76e.jpg>
 <img src="https://i.imgur.com/4tRKOcz.png" 
 alt="Chitanda eru bot" border="0">
 
