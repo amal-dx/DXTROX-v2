@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = async m => m.reply(`
 🤍 *General Section* 🤍
 
