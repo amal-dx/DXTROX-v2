@@ -1,4 +1,4 @@
-
+[![Welcome to Amal-dx Repo](https://readme-typing-svg.herokuapp.com?color=%231ABDF7&lines=The+five+boxing+wizards+jump+quickly)](https://git.io/typing-svg)
 ## 📢Introduce myself
 
 - 🙂I'm Amal
