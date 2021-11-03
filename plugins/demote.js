@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = async (m, { conn, participants }) => {
   let members = participants.filter(member => member.isAdmin).map(member => member.jid)
   let users = m.mentionedJid.filter(user => members.includes(user))
