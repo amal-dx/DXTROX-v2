@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let fetch = require('node-fetch')
 let handler = async (m, { conn, text, participants }) => {
   let _participants = participants.map(user => user.jid)
