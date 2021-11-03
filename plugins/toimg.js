@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 const { spawn } = require('child_process')
 const util = require('util')
 const { MessageType } = require('@adiwajshing/baileys')
