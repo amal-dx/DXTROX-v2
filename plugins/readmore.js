@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = async (m, { conn, text }) => {
   let [ l, r ] = text.split`|`
   if (!l) l = ''
