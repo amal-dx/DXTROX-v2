@@ -2,12 +2,12 @@ let handler = async m => m.reply(`
 
 
 ╭─「 Support link」
-│ • Gpay, OVO, Donate [919002370263]
-│ • https://github.com/Oreki-san/Eru-Bot
+│ • paytm,Donate [917736308760]
+│ • https://github.com/amal-dx/DXTROX-v2
  | • give a star if the project helped u
 ╰────
 `.trim()) // give a star if it helped u
-handler.help = ['donasi']
+handler.help = ['donate']
 handler.tags = ['info']
 handler.command = /^dona(te|si)$/i
 
