@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let { execSync } = require('child_process')
 let handler = async (m, { conn, text }) => {
   if (global.conn.user.jid == conn.user.jid) {
