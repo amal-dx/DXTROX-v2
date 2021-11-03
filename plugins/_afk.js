@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let handler = m => m
 handler.before = m => {
   let user = global.DATABASE.data.users[m.sender]
