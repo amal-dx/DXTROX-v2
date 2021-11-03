@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let { spawn }  = require('child_process');
 let handler  = async (m, { conn }) => {
   if (!process.send) throw 'Dont: node main.js\nDo: node index.js'
