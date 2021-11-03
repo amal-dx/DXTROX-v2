@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let fetch = require("node-fetch");
 let handler = async (m, { conn, command }) => {
 	if (m.quoted && m.quoted.sender) m.mentionedJid.push(m.quoted.sender);
