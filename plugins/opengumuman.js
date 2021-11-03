@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, text }) => {
