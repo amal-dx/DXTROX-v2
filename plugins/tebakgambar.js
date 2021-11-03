@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let fetch = require('node-fetch')
 
 let timeout = 120000
