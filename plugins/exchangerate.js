@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 const axios = require('axios')
 
 
