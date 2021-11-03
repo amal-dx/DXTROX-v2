@@ -1,4 +1,6 @@
-
+/*
+   Coded by amal-dx
+*/
 
 let util = require('util')
 let path = require('path')
