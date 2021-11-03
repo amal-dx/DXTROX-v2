@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = async (m, { conn, text }) => {
   if (!text) throw 'No text'
   m.reply(text, false, {
