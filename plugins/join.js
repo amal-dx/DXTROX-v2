@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
 
 let handler = async (m, { conn, text }) => {
