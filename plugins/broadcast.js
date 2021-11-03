@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let handler  = async (m, { conn, text }) => {
   let chats = conn.chats.all().filter(v => !v.read_only && v.message && !v.archive).map(v => v.jid)
   let cc = conn.serializeM(text ? m : m.quoted ? await m.getQuotedObj() : false || m)
