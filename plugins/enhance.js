@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 const fetch = require('node-fetch')
 const FormData = require('form-data')
 
