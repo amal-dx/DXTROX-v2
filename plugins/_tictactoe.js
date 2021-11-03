@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let handler = m => m
 let debugMode = !1
 
