@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 // let handler = m => m.reply('Waalaikumsalam')
 
 // handler.customPrefix = /Assalammualaikum/i
