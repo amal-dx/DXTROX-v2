@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let yts = require('yt-search')
 let handler = async (m, { text }) => {
   if (!text) throw 'What are you looking for?'
