@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = async (m, { conn, text }) => {
   conn.hartatahta = conn.hartatahta ? conn.hartatahta : {}
   if (m.chat in conn.hartatahta) throw 'Masih ada yang sedang membuat\nTeks Harta Tahta\ndi chat ini... tunggu sampai selesai'
