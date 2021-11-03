@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = async (m, { conn, args, usedPrefix }) => {
   conn.math = conn.math ? conn.math : {}
   if (args.length < 1) throw `
