@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 const colors = [
     0xff26c4dc, 0xff792138,
     0xff8b6990, 0xfff0b330,
