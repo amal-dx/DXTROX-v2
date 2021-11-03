@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let gtts = require('node-gtts')
 let fs = require('fs')
 let path = require('path')
