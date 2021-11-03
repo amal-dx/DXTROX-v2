@@ -19,6 +19,14 @@ const CFonts  = require('cfonts')
 db.once('open',async ()=>{
   console.log('Connected to database')
 
+console.log(
+            chalk.blueBright.italic('⚠️ Confirming password...')
+        );
+        if (config.MEENUSC == 'AISHU' || config.MEENUSC == 'aishu' || config.MEENUSC == 'Aishu' || config.MEENUSC == 'subbu') {
+        //vishnuserkl29
+        console.log(
+            chalk.green.bold('Password validated✅-')
+
 const find = await session.findOne({ID})
 if (find===null) {
 console.log('id nahi mili ok')
