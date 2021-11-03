@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let fetch = require('node-fetch')
 let handler = async(m, { conn }) => {
   let res = await fetch('http://api.waifu.pics/sfw/neko')
