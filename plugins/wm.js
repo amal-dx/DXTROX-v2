@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../lib/sticker')
 let handler = async (m, { conn, text }) => {
