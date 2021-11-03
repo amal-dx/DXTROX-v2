@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let handler = async (m, { conn, command, args }) => {
   let chats = args.length > 0 && /group|gc/i.test(args[0]) ? conn.chats.array.filter(v => v.jid.endsWith('g.us') && !v.pin).map(v => v.jid) : [m.chat]
   let isDelete = /^(clear|delete)/i.test(command)
