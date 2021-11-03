@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 const xpperlimit = 350 
 let handler = async (m, { conn, command, args }) => {
   let count = command.replace(/^buy/i, '')
