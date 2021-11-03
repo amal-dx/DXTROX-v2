@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let fetch = require('node-fetch')
 let googleIt = require('google-it')
 let handler = async (m, { conn, command, args }) => {
