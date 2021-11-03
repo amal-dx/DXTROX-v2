@@ -1,4 +1,6 @@
-
+/*
+   Coded by amal-dx
+*/
 let handler = async m => m.reply(`
 
 Here you can Find all 
