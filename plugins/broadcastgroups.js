@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let handler  = async (m, { conn, text }) => {
   let groups = conn.chats.all().filter(v => v.jid.endsWith('g.us') && !v.read_only && v.message && !v.announce).map(v => v.jid)
   let cc = text ? m : m.quoted ? await m.getQuotedObj() : false || m
