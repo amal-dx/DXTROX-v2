@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 const { igdl } = require('../lib/scrape')
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
