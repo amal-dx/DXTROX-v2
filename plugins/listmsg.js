@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = m => {
     let msgs = global.DATABASE._data.msgs
     m.reply(`
