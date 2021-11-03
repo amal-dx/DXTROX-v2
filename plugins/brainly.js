@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 const brainly = require('brainly-scraper-v2')
 let handler = async function (m, { text }) {
   if (!text) throw 'Soalnya?'
