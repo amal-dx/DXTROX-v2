@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let handler = async (m, { conn, text }) => {
   let id = m.chat
   if (id in conn.math) {
