@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = async (m, { conn, text, isROwner, isOwner }) => {
   if (text) {
     if (isROwner) global.conn.welcome = text
