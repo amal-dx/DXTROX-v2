@@ -1,4 +1,6 @@
-// By RC047 :V
+/*
+   Coded by amal-dx
+*/
 
 let handler = async(m, { conn, text }) => {
     if (!text) throw 'Please enter a report'
