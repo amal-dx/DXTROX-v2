@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let fetch = require('node-fetch')
 let split = '|'
 let handler = async (m, { conn, args: [effect], text: txt }) => {
