@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let handler  = async (m, { conn }) => {
   conn.reply(m.chat,`“${pickRandom(global.bucin)}”`, m)
 }
