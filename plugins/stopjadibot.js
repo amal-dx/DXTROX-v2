@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler  = async (m, { conn }) => {
   if (global.conn.user.jid == conn.user.jid) conn.reply(m.chat, 'Why dont you go directly to the terminal?', m)
   else {
