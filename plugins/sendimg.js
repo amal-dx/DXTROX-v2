@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let oreki = "./src/oreki.jpg"
 
  conn.sendFile(
