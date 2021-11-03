@@ -1,5 +1,6 @@
-// Terimakasih kpd RC047 :v
-// Fitur By Xteams
+/*
+   Coded by amal-dx
+*/
 
 const { sticker } = require('../lib/sticker')
 const { MessageType } = require('@adiwajshing/baileys')
