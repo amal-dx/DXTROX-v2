@@ -1,4 +1,6 @@
-
+/*
+   Coded by amal-dx
+*/
 module.exports = {
     before(m) {
       if (/\b(hi)\b/i.test(m.text)) m.reply('Hello')
