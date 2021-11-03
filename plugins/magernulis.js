@@ -1,6 +1,6 @@
-// Magernulis By MFarelS:V
-// Code by DrawlNag
-// Recode by Nurutomo :V
+/*
+   Coded by amal-dx
+*/
 let handler  = async (m, { command, conn, text }) => {
   let id = (command.match(/[1-6]$/) || [])[0] || ''
   await conn.sendFile(m.chat, global.API('xteam', '/magernulis' + id, {
