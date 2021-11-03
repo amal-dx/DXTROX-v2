@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = async (m, { conn }) => {
   if (!m.quoted) throw 'Reply pesan!'
   if (!m.quoted.fromMe) throw false
