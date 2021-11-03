@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 const imgbb = require('imgbb-uploader')
 const fs = require('fs')
 const { exec } = require('child_process')
