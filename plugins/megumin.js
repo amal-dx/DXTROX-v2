@@ -1,4 +1,6 @@
-
+/*
+   Coded by amal-dx
+*/
 let fetch = require('node-fetch')
 let handler = async(m, { conn }) => {
   let res = await fetch('https://api.waifu.pics/sfw/waifu')
@@ -277,7 +279,7 @@ let handler = async(m, { conn }) => {
 ╰────
 
 
-*Eru-Bot by JJ-Oreki*
+*DXTROX by amal-dx*
 ```Customizable WhatsApp Bot```)
 }
 handler.help = ['menu', 'help', '?']
