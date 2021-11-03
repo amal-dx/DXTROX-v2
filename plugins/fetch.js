@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let fetch = require('node-fetch')
 let util = require('util')
 let handler = async (m, { text }) => {
