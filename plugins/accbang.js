@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let handler = async (m, { conn, isAdmin }) => {
   if (m.fromMe) throw 'err'
   if (isAdmin) throw 'Even though I have become an admin'
