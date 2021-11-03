@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let os = require('os')
 let util = require('util')
 let { performance } = require('perf_hooks')
