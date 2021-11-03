@@ -1,7 +1,5 @@
 /*
-   Silahkan Di Pakek
-   Tapi Bantu Rapihin :v
-   Buatan: Miaweers
+   Coded by amal-dx
 */
 
 let handler = async (m, { conn, args }) => {
