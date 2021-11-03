@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = async (m, { conn, args: [event], text }) => {
     let mentions = text.replace(event, '').trimStart()
     let who = mentions ? conn.parseMention(mentions) : []
