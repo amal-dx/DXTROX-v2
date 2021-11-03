@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = async (m, { conn, text }) => {
   let q
   try { q = m.quoted.download() }
