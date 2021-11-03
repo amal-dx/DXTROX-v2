@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 const fs = require('fs')
 const ffmpeg = require('fluent-ffmpeg')
 
