@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let handler = m => m
 
 handler.before = async function (m, { match }) {
