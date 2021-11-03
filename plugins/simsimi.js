@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let fetch = require('node-fetch')
 let handler = async (m, { text }) => {
   let res = await fetch(global.API('xteam', '/simsimi', { kata: text }, 'APIKEY'))
