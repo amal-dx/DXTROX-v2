@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 const uploadFile = require('../lib/uploadFile')
 const uploadImage = require('../lib/uploadImage')
 
