@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, args }) => {
   let full = /f$/i.test(command)
