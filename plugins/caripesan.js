@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let handler = async (m, { conn, text }) => {
     if (!text) throw 'enter the message that you are looking for!'
     let split = text.split`|`
