@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 const translate = require('translate-google-api')
 let handler = async (m, { args, usedPrefix, command }) => {
     er = `example: \n${usedPrefix + command} language text\n${usedPrefix + command} id your messages\n\nList of supported languages: https://cloud.google.com/translate/docs/languages`
