@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = async (m, { conn, command, usedPrefix, text }) => {
     let which = command.replace(/get/i, '')
     if (!text) throw `Gunakan *${usedPrefix}list${which}* untuk melihat list nya`
