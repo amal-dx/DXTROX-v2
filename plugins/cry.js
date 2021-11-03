@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let fetch = require("node-fetch")
 const { sticker } = require('../lib/sticker')
 const { MessageType } = require('@adiwajshing/baileys')
