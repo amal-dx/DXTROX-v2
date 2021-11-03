@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let syntaxerror = require('syntax-error')
 let util = require('util')
 
