@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 const { MessageType } = require('@adiwajshing/baileys')
 const { Sticker } = require('wa-sticker-formatter')
 const isUrl = (text) => {
