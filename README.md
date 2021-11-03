@@ -63,4 +63,6 @@
 ## Show your support 
 
 Give a ⭐️ if this project helped you!
+
+*THANKS TO NURUTOMO AND ALL DEVELOPERS*
  
