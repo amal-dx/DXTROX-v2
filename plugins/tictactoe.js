@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 const TicTacToe = require("../lib/tictactoe")
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
