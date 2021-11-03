@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 async function handler(m) {
     if (!m.quoted) throw 'reply message!'
     let q = this.serializeM(await m.getQuotedObj())
