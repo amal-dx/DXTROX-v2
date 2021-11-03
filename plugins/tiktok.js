@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
   if (!args[0]) throw 'Uhm...url Where is it?'
