@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 const { createHash } = require('crypto')
 let Reg = /\|?(.*)([.|])([0-9]*)$/i
 let handler = async function (m, { text, usedPrefix }) {
