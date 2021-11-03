@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let fetch = require('node-fetch')
 let handler = async(m, { conn, text, usedPrefix, command }) => {
     if (!text) trhow `Enter a query, for example: ${usedPrefix +command} Logo`
