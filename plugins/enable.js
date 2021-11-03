@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = async (m, { conn, usedPrefix, command, text, args, isROwner }) => {
   let isEnable = /true|enable|(turn)?on/i.test(command)
   let chat = global.DATABASE._data.chats[m.chat]
