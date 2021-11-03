@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 const { MessageType } = require("@adiwajshing/baileys")
 
 async function handler(m, { command }) {
