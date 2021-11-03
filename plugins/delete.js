@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = function (m) {
   if (!m.quoted) throw false
   let { fromMe, id, isBaileys } = m.quoted
