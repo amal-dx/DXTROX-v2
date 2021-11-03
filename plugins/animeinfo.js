@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let fetch = require('node-fetch')
 let cheerio = require('cheerio')
 let handler = async(m, { conn, text }) => {
