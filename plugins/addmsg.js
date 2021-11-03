@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let { WAMessageProto } = require('@adiwajshing/baileys')
 let handler = async (m, { command, usedPrefix, text }) => {
     let M = WAMessageProto.WebMessageInfo
