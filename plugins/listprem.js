@@ -1,7 +1,5 @@
 /*
-   Silahkan Di Pakek
-   Tapi Bantu Rapihin :v
-   Buatan: Miaweers
+   Coded by amal-dx
 */
 
 const { MessageType } = require('@adiwajshing/baileys')
