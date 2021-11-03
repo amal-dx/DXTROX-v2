@@ -1,3 +1,6 @@
+/*
+   Coded by amal
+*/
 let handler = async (m, { conn, command, text }) => {
   conn.reply(m.chat, `
 *Pertanyaan:* ${command} ${text}
