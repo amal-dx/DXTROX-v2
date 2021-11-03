@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = async (m, { conn, args, participants }) => {
   let users = Object.entries(global.DATABASE.data.users).map(([key, value]) => {
     return {...value, jid: key}
