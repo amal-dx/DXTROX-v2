@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let handler = async(m, { conn }) => {
 
     if(m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
