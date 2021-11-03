@@ -1,3 +1,6 @@
+/*
+   Coded by amal-dx
+*/
 let qrcode = require("qrcode")
 
 let handler  = async (m, { conn, text }) => {
