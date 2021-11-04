@@ -20,7 +20,7 @@
         "CRON": {
             "description": "Cron string to clear chats in a cycle",
             "required": false
-        }, 
+        }Null, 
         "MONGO_URI": {
             "description": "A secret String for Mongodb Connection.(Required)"
         },
