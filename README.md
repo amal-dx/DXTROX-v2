@@ -48,9 +48,9 @@
  - As you know there are lots of missing files in /plugins and If you want to contribute please consider Doing PRs thank you
  
  
- ## 👥 Developer
+ ##  Developer
  👤  **Amal-dx**
-* Github : https://github.com/amal-dx/DXTROX-v2
+<a href="https://github.com/vishnu-memanakizhakathil/Meenakshi/network/members"><img title="Forks" src="https://img.shields.io/github/forks/vishnu-memanakizhakathil/Meenakshi?color=pink&style=flat-square"></a>
 * WhatsApp : https://wa.me/917736308760
 
 
