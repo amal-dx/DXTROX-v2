@@ -8,7 +8,7 @@
 "success_url": "/",
     "env": {
         "Handler": {
-            "description": "Prefix of your bot"
+            "description": "Handler of your bot eg- . , / $ &  etc.."
         },
         "ID": {
             "description": "A string for the session to be classified and to get access to the server endpoints"
