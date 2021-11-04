@@ -56,7 +56,7 @@
 
 ## 📝 License 
 
-+ This project is [MIT License v3.0](https://github.com/Oreki-san/Eru-Bot/blob/main/LICENSE) licensed. 
++ This project is [MIT License v3.0](https://github.com/amal-dx/DXTROX-v2/blob/main/LICENSE) licensed. 
 
 
 
