@@ -50,7 +50,6 @@
  
  ##  Developer
  👤  **Amal-dx**
-<a href="https://github.com/vishnu-memanakizhakathil/Meenakshi/network/members"><img title="Forks" src="https://img.shields.io/github/forks/vishnu-memanakizhakathil/Meenakshi?color=pink&style=flat-square"></a>
 * WhatsApp : https://wa.me/917736308760
 
 
