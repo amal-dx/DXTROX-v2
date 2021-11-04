@@ -1,7 +1,7 @@
 /*
    Coded by amal-dx
 */
-const TicTacToe = require("../lib/tictactoe")
+const TicTacToe = require("../plugins/tictactoe")
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
     conn.game = conn.game ? conn.game : {}
