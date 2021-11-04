@@ -1,27 +1,22 @@
 /*
    Coded by amal-dx
 */
-const { igdl } = require('../lib/scrape')
+let fetch = require('node-fetch')
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-
-  if (!args[0]) throw `uhm.. where is the url?\n\nExample:\n${usedPrefix + command} https://www.instagram.com/`
-  if (!args[0].match(/https:\/\/www.instagram.com\/(p|reel|tv)/gi)) throw `wrong url, this command to download post/reel/tv`
-
-  igdl(args[0]).then(async res => {
-    let igdl = JSON.stringify(res)
-    let json = JSON.parse(igdl)
-    await m.reply(global.wait)
-    for (let { downloadUrl, type } of json) {
-      conn.sendFile(m.chat, downloadUrl, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), watermark, m)
-    }
-  })
-
+let handler = async (m, { conn, args }) => {
+  if (!args[0]) throw 'Uhm...url nya mana?'
+  let res = await fetch(API('Velgrynd', '/api/igdl', { url: args[0] }))
+  if (!res.ok) throw await res.text()
+  let json = await res.json()
+  let { user, medias } = json.result
+  for (let i = 0; i < medias.length; i++) {
+    let capt = i == 0 ? '*• User:* ' + user.username + '\n*• Followers:* ' + user.followers + '\n*• Media count:* ' + medias.length : ''
+    conn.sendFile(m.chat, medias[i].url, '', capt, m)
+  }
 }
 handler.help = ['ig'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^(ig|instagram|insta)$/i
-
 handler.limit = true
+handler.command = /^(ig(dl)?)$/i
 
 module.exports = handler
