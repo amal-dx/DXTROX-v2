@@ -71,5 +71,5 @@ Give a ⭐️ if this project helped you!
 
 
 
-*THANKS TO NURUTOMO AND ALL DEVELOPERS*
+*THANKS TO NURUTOMO AND Eru and ALL DEVELOPERS*
  
