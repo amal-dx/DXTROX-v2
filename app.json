@@ -20,10 +20,10 @@
         "CRON": {
             "description": "Cron string to clear chats in a cycle",
             "required": false
-        },
+        }, 
         "MONGO_URI": {
             "description": "A secret String for Mongodb Connection.(Required)"
-        },
+        },Null
         "GOOGLE_API_KEY": {
             "description": "Google API key for Google searches for MODS (Not Required)",
             "required": false
