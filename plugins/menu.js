@@ -432,20 +432,3 @@ function clockString(ms) {
   let s = isNaN(ms) ? 'ss' : Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
-function ucapan() {
-  const time = moment.tz('Asia/Jakarta').format('HH')
-  res = "PAGI"
-  if (time >= 4) {
-    res = "P"
-  }
-  if (time >= 12) {
-    res = "Good afternoon 🏜️"
-  }
-  if (time >= 15) {
-    res = "Good afternoon 🌅"
-  }
-  if (time >= 18) {
-    res = "Good night 🌃"
-  }
-  return res
-}
