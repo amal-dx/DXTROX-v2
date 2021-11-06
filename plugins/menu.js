@@ -1,150 +1,135 @@
-﻿let levelling = require('../lib/levelling')
-let { MessageType, Presence } = require('@adiwajshing/baileys')
+let levelling = require('../lib/levelling')
+let { MessageType } = require('@adiwajshing/baileys')
 let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
-  before: `*_ITSUKI • Bot_*
-
-- *I N F O  B O T*
-Base : NURUTOMO
-Recode : AMAL
-Bot Name : DXTROX-v2
-Bot Username : %me
-Uptime : %uptime
-Total Hit : %totalreg
-
-- *D A T E  &  T I M E*
-Time : %time
-Date : %date
-Day : %week
-
-- *I N F O  U S E R*
-Name : %name
-Limit : %limit
-Level : %level
-Exp : %exp
-Role : %role
-`.trimStart(),
-  header: '- *%category*',
-  body: '%cmd %isLimit %isPremium',
-  footer: '\n',
+  before: `
+┌─〔 %me 〕
+├ Hai, %name!
+│
+├ Tersisa *%limit Limit*
+├ Role *%role*
+├ Level *%level (%exp / %maxexp)* [%xp4levelup]
+├ %totalexp XP secara Total
+│ 
+├ Tanggal: *%week %weton, %date*
+├ Tanggal Islam: *%dateIslamic*
+├ Waktu: *%time*
+│
+├ Uptime: *%uptime (%muptime)*
+├ Database: %rtotalreg dari %totalreg
+├ Github:
+├ %github
+└────
+%readmore`.trimStart(),
+  header: '┌─〔 %category 〕',
+  body: '├ %cmd %islimit %isPremium',
+  footer: '└────\n',
   after: `
-DXTROX-Bot@^1.1.2
-\`\`\`Created by Am\`\`\`
+*%npmname@^%version*
+${'```%npmdesc```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'sticker', 'kerangajaib', 'quotes', 'anime', 'nsfw', 'admin', 'grup', 'premium', 'music', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
-    'main': 'M A I N',
-    'game': 'G A M E',
-    'xp': 'X P / L I M I T',
-    'sticker': 'S T I C K E R',
-    'kerang': 'K E R A N G',
-    'quotes': 'Q U O T E S',
-    'anime': 'A N I M E',
-    'nsfw': 'N S F W',
-    'admin': `A D M I N`,
-    'group': 'G R O U P',
-    'premium': 'P R E M I U M',
-    'music': 'M U S I C'
-    'internet': 'I N T E R N E T',
-    'anonymous': 'A N O N Y M O U S  C H A T',
-    'nulis': 'N U L I S',
-    'downloader': 'D O W N L O A D E R',
-    'tools': 'T O O L S',
-    'fun': 'F U N',
-    'database': 'D A T A B A S E',
-    'vote': 'V O T E',
-    'absen': 'A B S E N',
-    'quran': 'A L  Q U R A N',
-    'audio': 'A U D I O',
-    'jadibot': 'S E S S I O N',
-    'info': 'I N F O',
-    '': 'Created By Itsuki',
+    'main': 'Utama',
+    'game': 'Game',
+    'xp': 'Exp & Limit',
+    'sticker': 'Stiker',
+    'kerang': 'Kerang Ajaib',
+    'quotes': 'Quotes',
+    'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
+    'group': 'Grup',
+    'premium': 'Premium',
+    'internet': 'Internet',
+    'anonymous': 'Anonymous Chat',
+    'nulis': 'MagerNulis & Logo',
+    'downloader': 'Downloader',
+    'tools': 'Tools',
+    'fun': 'Fun',
+    'database': 'Database',
+    'vote': 'Voting',
+    'absen': 'Absen',
+    'quran': 'Al Qur\'an',
+    'audio': 'Pengubah Suara',
+    'jadibot': 'Jadi Bot',
+    'info': 'Info',
+    '': 'Tanpa Kategori',
   }
   if (teks == 'game') tags = {
-    'game': 'G A M E'
+    'game': 'Game'
   }
   if (teks == 'xp') tags = {
-    'xp': 'X P / L I M I T'
+    'xp': 'Exp & Limit'
   }
-  if (teks == 'sticker') tags = {
-    'sticker': 'S T I C K E R'
+  if (teks == 'stiker') tags = {
+    'sticker': 'Stiker'
   }
   if (teks == 'kerangajaib') tags = {
-    'kerang': 'K E R A N G'
+    'kerang': 'Kerang Ajaib'
   }
   if (teks == 'quotes') tags = {
-    'quotes': 'Q U O T E S'
-  }
-  if (teks == 'anime') tags = {
-    'anime': 'A N I M E'
-  }
-  if (teks == 'nsfw') tags = {
-    'nsfw': 'N S F W'
+    'quotes': 'Quotes'
   }
   if (teks == 'admin') tags = {
-    'admin': `A D M I N`
+    'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`
   }
   if (teks == 'grup') tags = {
-    'group': 'G R O U P'
+    'group': 'Grup'
   }
   if (teks == 'premium') tags = {
-    'premium': 'P R E M I U M'
-  }
-  if (teks == 'music') tags = {
-    'music': 'M U S I C'
+    'premium': 'Premium'
   }
   if (teks == 'internet') tags = {
-    'internet': 'I N T E R N E T'
+    'internet': 'Internet'
   }
   if (teks == 'anonymous') tags = {
-    'anonymous': 'A N O N Y M O U S  C H A T'
+    'anonymous': 'Anonymous Chat'
   }
   if (teks == 'nulis') tags = {
-    'nulis': 'N U L I S'
+    'nulis': 'MagerNulis & Logo'
   }
   if (teks == 'downloader') tags = {
-    'downloader': 'D O W N L O A D E R'
+    'downloader': 'Downloader'
   }
   if (teks == 'tools') tags = {
-    'tools': 'T O O L S'
+    'tools': 'Tools'
   }
   if (teks == 'fun') tags = {
-    'fun': 'F U N'
+    'fun': 'Fun'
   }
   if (teks == 'database') tags = {
-    'database': 'D A T A B A S E'
+    'database': 'Database'
   }
   if (teks == 'vote') tags = {
-    'vote': 'V O T E',
-    'absen': 'A B S E N'
+    'vote': 'Voting',
+    'absen': 'Absen'
   }
   if (teks == 'quran') tags = {
-    'quran': 'A L  Q U R A N'
+    'quran': 'Al Qur\'an'
   }
   if (teks == 'audio') tags = {
-    'audio': 'A U D I O'
+    'audio': 'Pengubah Suara'
   }
   if (teks == 'jadibot') tags = {
-    'jadibot': 'S E S S I O N'
+    'jadibot': 'Jadi Bot'
   }
   if (teks == 'info') tags = {
-    'info': 'I N F O'
+    'info': 'Info'
   }
   if (teks == 'tanpakategori') tags = {
-    '': 'IDK'
+    '': 'Tanpa Kategori'
   }
   if (teks == 'owner') tags = {
-    'owner': 'O W N E R',
-    'host': 'H O S T',
-    'advanced': 'E V A L'
+    'owner': 'Owner',
+    'host': 'Host',
+    'advanced': 'Advanced'
   }
 
 
@@ -153,7 +138,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
     let { exp, limit, level, role, registered } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
-    let name = conn.getName(m.sender)
+    let name = registered ? global.db.data.users[m.sender].name : conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
     let locale = 'id'
     // d.getTimeZoneOffset()
@@ -203,115 +188,107 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `*L I S T - M E N U*`.trim(),
-          "description": "‏‏‎Jika button tidak muncul...\nSilahkan ketik .menu all",
-          "buttonText": "𝕮𝖑𝖎𝖈𝖐 𝕳𝖊𝖗𝖊",
+          "title": `${ucapan()}, ${name}`.trim(),
+          "description": "© stikerin",
+          "buttonText": "Klik Disini",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
               "rows": [
                 {
-                  "title": "G A M E  M E N U",
+                  "title": `Semua Perintah`,
                   "description": "",
-                  "rowId": ".? game"
+                  "rowId": `${_p}? all`
+                }, {
+                  "title": "Game",
+                  "description": "",
+                  "rowId": `${_p}? game`
 
                 }, {
-                  "title": "XP / L I M I T  M E N U",
+                  "title": "XP",
                   "description": "",
-                  "rowId": ".? xp"
+                  "rowId": `${_p}? xp`
 
                 }, {
-                  "title": "S T I C K E R",
+                  "title": "Stiker",
                   "description": "",
-                  "rowId": ".? sticker"
+                  "rowId": `${_p}? stiker`
                 }, {
-                  "title": "K E R A N G  M E N U",
+                  "title": "Kerang Ajaib",
                   "description": "",
-                  "rowId": ".? kerangajaib"
+                  "rowId": `${_p}? kerangajaib`
                 }, {
-                  "title": "Q U O T E S  M E N U",
+                  "title": "Quotes",
                   "description": "",
-                  "rowId": ".? quotes"
+                  "rowId": `${_p}? quotes`
                 }, {
-                  "title": "A N I M E  M E N U",
+                  "title": "Admin",
                   "description": "",
-                  "rowId": ".? anime"
+                  "rowId": `${_p}? admin`
                 }, {
-                  "title": "N S F W  M E N U",
+                  "title": "Grup",
                   "description": "",
-                  "rowId": ".? nsfw"
+                  "rowId": `${_p}? grup`
                 }, {
-                  "title": "A D M I N  M E N U",
+                  "title": "Premium",
                   "description": "",
-                  "rowId": ".? admin"
+                  "rowId": `${_p}? premium`
                 }, {
-                  "title": "G R O U P  M E N U",
+                  "title": "Internet",
                   "description": "",
-                  "rowId": ".? grup"
+                  "rowId": `${_p}? internet`
                 }, {
-                  "title": "I N T E R N E T  M E N U",
+                  "title": "Anonymous",
                   "description": "",
-                  "rowId": ".? internet"
+                  "rowId": `${_p}? anonymous`
                 }, {
-                  "title": "ANONYMOUS CHAT MENU",
+                  "title": "Nulis & Logo",
                   "description": "",
-                  "rowId": ".? anonymous"
+                  "rowId": `${_p}? nulis`
                 }, {
-                  "title": "N U L I S  M E N U",
+                  "title": "Downloader",
                   "description": "",
-                  "rowId": ".? nulis"
+                  "rowId": `${_p}? downloader`
                 }, {
-                  "title": "D O W N L O A D E R  M E N U",
+                  "title": "Tools",
                   "description": "",
-                  "rowId": ".? downloader"
+                  "rowId": `${_p}? tools`
                 }, {
-                  "title": "T O O L S  M E N U",
+                  "title": "Fun",
                   "description": "",
-                  "rowId": ".? tools"
+                  "rowId": `${_p}? fun`
                 }, {
-                  "title": "F U N  M E N U",
+                  "title": "Database",
                   "description": "",
-                  "rowId": ".? fun"
+                  "rowId": `${_p}? database`
                 }, {
-                  "title": "D A T A B A S E  M E N U",
+                  "title": "Vote & Absen",
                   "description": "",
-                  "rowId": ".? database"
+                  "rowId": `${_p}? vote`
                 }, {
-                  "title": "P R E M I U M",
+                  "title": "Al-Qur\'an",
                   "description": "",
-                  "rowId": ".? premium"
+                  "rowId": `${_p}? quran`
                 }, {
-                  "title": "M U S I C",
+                  "title": "Pengubah Suara",
                   "description": "",
-                  "rowId": ".? music"
+                  "rowId": `${_p}? audio`
                 }, {
-                  "title": "V O T E  &  A B S E N  M E N U",
+                  "title": "Jadi Bot",
                   "description": "",
-                  "rowId": ".? vote"
+                  "rowId": `${_p}? jadibot`
                 }, {
-                  "title": "A L  Q U R A N  M E N U",
+                  "title": "Info",
                   "description": "",
-                  "rowId": ".? quran"
+                  "rowId": `${_p}? info`
                 }, {
-                  "title": "A U D I O  M E N U",
+                  "title": "Tanpa Kategori",
                   "description": "",
-                  "rowId": ".? audio"
+                  "rowId": `${_p}? tanpakategori`
                 }, {
-                  "title": "S E S S I O N  M E N U",
+                  "title": "Owner",
                   "description": "",
-                  "rowId": ".? jadibot"
-                }, {
-                  "title": "I N F O  M E N U",
-                  "description": "",
-                  "rowId": ".? info"
-                }, {
-                  "title": "O W N E R  M E N U",
-                  "description": "",
-                  "rowId": ".? owner"
-                }, {
-                  "title": "S C  B O T",
-                  "description": "",
-                  "rowId": ".sc"
+                  "rowId": `${_p}? owner`
                 }
               ]
             }
@@ -324,7 +301,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       }, {}), { waitForAck: true })
     }
     // gunakan ini jika kamu menggunakan whatsapp bisnis
-    //   conn.fakeReply(m.chat, `
+    //   throw `
     // ┌〔 DAFTAR MENU 〕
     // ├ ${_p + command} all
     // ├ ${_p + command} game
@@ -332,8 +309,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     // ├ ${_p + command} stiker
     // ├ ${_p + command} kerang
     // ├ ${_p + command} quotes
-    // ├ ${_p + command} anime
-    // ├ ${_p + command} nsfw
     // ├ ${_p + command} admin
     // ├ ${_p + command} group
     // ├ ${_p + command} premium
@@ -349,9 +324,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     // ├ ${_p + command} audio
     // ├ ${_p + command} jadibot
     // ├ ${_p + command} info
-    // ├ ${_p + command} tanpakategori
+    // ├ ${_p + command} tanpa kategori
     // ├ ${_p + command} owner
-    // └────`.trim(), '0@s.whatsapp.net', 'Menu', 'status@broadcast')
+    // └────  
+    //     `.trim()
     let groups = {}
     for (let tag in tags) {
       groups[tag] = []
@@ -401,15 +377,15 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.sendButtonLoc(m.chat, await (await fetch(back)).buffer(), text.trim(), 'CREATED BY ITSUKI', 'O W N E R', '.creator')
-   } catch (e) {
-    m.reply('Maaf menu error...\nChat Owner : @60199782326')
+    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'made with ❤️ by ariffb', 'Pemilik Bot', `${_p}owner`, 'Donasi', `${_p}donasi`, m)
+  } catch (e) {
+    conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
   }
 }
-handler.help = ['menu', 'help']
+handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(lagkoluso|\?|gabut)$/i
+handler.command = /^(menu|help|\?)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
@@ -420,6 +396,7 @@ handler.admin = false
 handler.botAdmin = false
 
 handler.fail = null
+handler.exp = 3
 
 module.exports = handler
 
@@ -427,8 +404,25 @@ const more = String.fromCharCode(1)
 const readMore = more.repeat(1)
 
 function clockString(ms) {
-  let h = isNaN(ms) ? 'hh' : Math.floor(ms / 3600000)
-  let m = isNaN(ms) ? 'mm' : Math.floor(ms / 60000) % 60
-  let s = isNaN(ms) ? 'ss' : Math.floor(ms / 1000) % 60
+  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
+  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
+  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
+}
+function ucapan() {
+  const time = moment.tz('Asia/Jakarta').format('HH')
+  res = "Selamat dinihari"
+  if (time >= 4) {
+    res = "Selamat pagi"
+  }
+  if (time > 10) {
+    res = "Selamat siang"
+  }
+  if (time >= 15) {
+    res = "Selamat sore"
+  }
+  if (time >= 18) {
+    res = "Selamat malam"
+  }
+  return res
 }
