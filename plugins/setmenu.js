@@ -1,3 +1,4 @@
+
 let handler = async (m, { conn, command, text }) => {
   let type = command.replace(/^set(menu|help|\?)/, '').toLowerCase()
   if (type == '') {
