@@ -1,162 +1,111 @@
 let fs = require('fs')
+let fetch = require('node-fetch')
+let menus = fs.readFileSync('./menu.mp3')
+let moment = require('moment-timezone')
+let fakeImage = 'https://telegra.ph/file/2bb90be904abf22615127.jpg'
+let safusimage = 'https://i.ibb.co/sgDvxrK/IMG-20210727-WA1305.jpg'
+let fakeMessage = 'Safwan Ganz'
+const { MessageType } = require('@adiwajshing/baileys')
 let path = require('path')
 let levelling = require('../lib/levelling')
-let tags = {
-  'main': 'Main',
-  'game': 'Game',
-  'xp': 'Exp & Limit',
-  'sticker': 'Sticker',
-  'kerang': 'Kerang Ajaib',
-  'quotes': 'Quotes',
-  'admin': 'Admin',
-  'group': 'Group',
-  'premium': 'Premium',
-  'internet': 'Internet',
-  'anonymous': 'Anonymous Chat',
-  'nulis': 'MagerNulis & Logo',
-  'downloader': 'Downloader',
-  'tools': 'Tools',
-  'fun': 'Fun',
-  'database': 'Database',
-  'vote': 'Voting',
-  'absen': 'Absen',
-  'quran': 'Al Qur\'an',
-  'jadibot': 'Jadi Bot',
-  'owner': 'Owner',
-  'host': 'Host',
-  'advanced': 'Advanced',
-  'info': 'Info',
-  '': 'No Category',
-}
-const defaultMenu = {
-  before: `
-╭─「 %me 」
-│ Hai, %name!
-│
-│ Tersisa *%limit Limit*
-│ Role *%role*
-│ Level *%level (%exp / %maxexp)* [%xp4levelup lagi untuk levelup]
-│ %totalexp XP in Total
-│ 
-│ Tanggal: *%week %weton, %date*
-│ Tanggal Islam: *%dateIslamic*
-│ Waktu: *%time*
-│
-│ Uptime: *%uptime (%muptime)*
-│ Database: %rtotalreg of %totalreg
-│ Github:
-│ %github
-╰────
-%readmore`.trimStart(),
-  header: '╭─「 %category 」',
-  body: '│ • %cmd %islimit %isPremium',
-  footer: '╰────\n',
-  after: `
-*%npmname@^%version*
-${'```%npmdesc```'}
-`,
-}
-let handler = async (m, { conn, usedPrefix: _p }) => {
+let handler = async (m, { conn, usedPrefix }) => {
+let timer = moment.tz('Asia/Kolkata').format('HH:mm:ss')
+let pp = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+  let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   try {
-    let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
-    let { exp, limit, level, role } = global.db.data.users[m.sender]
-    let { min, xp, max } = levelling.xpRange(level, global.multiplier)
-    let name = conn.getName(m.sender)
-    let d = new Date(new Date + 3600000)
-    let locale = 'id'
-    // d.getTimeZoneOffset()
-    // Offset -420 is 18.00
-    // Offset    0 is  0.00
-    // Offset  420 is  7.00
-    let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
-    let week = d.toLocaleDateString(locale, { weekday: 'long' })
-    let date = d.toLocaleDateString(locale, {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    })
-    let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    }).format(d)
-    let time = d.toLocaleTimeString(locale, {
+    pp = await conn.getProfilePicture(who)
+  } catch (e) {
+
+  } finally {
+    let jam = moment.tz('Asia/Kolkata').format('HH')
+    var ucapanWaktu = 'Good Morning 🌄'
+				if (jam >= '03' && jam <= '10') {
+				ucapanWaktu = 'Good Morning 🌄'
+				} else if (jam >= '10' && jam <= '13') {
+				ucapanWaktu = 'Good Afternoon ☀️'
+				} else if (jam >= '13' && jam <= '18') {
+				ucapanWaktu = 'Good evening 🌅'
+				} else if (jam >= '18' && jam <= '23') {
+				ucapanWaktu = 'Good Night 🌙'
+				} else {
+				ucapanWaktu = 'Good Night 🌙'
+				} 
+				   let name = conn.getName(m.sender)
+    let d = new Date
+    let locale = 'en'
+				    let time = d.toLocaleTimeString(locale, {
       hour: 'numeric',
       minute: 'numeric',
       second: 'numeric'
     })
-    let _uptime = process.uptime() * 1000
-    let _muptime
-    if (process.send) {
-      process.send('uptime')
-      _muptime = await new Promise(resolve => {
-        process.once('message', resolve)
-        setTimeout(resolve, 1000)
-      }) * 1000
-    }
-    let muptime = clockString(_muptime)
-    let uptime = clockString(_uptime)
-    let totalreg = Object.keys(global.db.data.users).length
-    let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
-    let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
-      return {
-        help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
-        tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
-        prefix: 'customPrefix' in plugin,
-        limit: plugin.limit,
-        premium: plugin.premium,
-        enabled: !plugin.disabled,
-      }
+        let date = d.toLocaleDateString(locale, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
     })
-    for (let plugin of help)
-      if (plugin && 'tags' in plugin)
-        for (let tag of plugin.tags)
-          if (!(tag in tags) && tag) tags[tag] = tag
-    conn.menu = conn.menu ? conn.menu : {}
-    let before = conn.menu.before || defaultMenu.before
-    let header = conn.menu.header || defaultMenu.header
-    let body = conn.menu.body || defaultMenu.body
-    let footer = conn.menu.footer || defaultMenu.footer
-    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
-    let _text = [
-      before,
-      ...Object.keys(tags).map(tag => {
-        return header.replace(/%category/g, tags[tag]) + '\n' + [
-          ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
-            return menu.help.map(help => {
-              return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%islimit/g, menu.limit ? '(Limit)' : '')
-                .replace(/%isPremium/g, menu.premium ? '(Premium)' : '')
-                .trim()
-            }).join('\n')
-          }),
-          footer
-        ].join('\n')
-      }),
-      after
-    ].join('\n')
-    text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? _text : ''
-    let replace = {
-      '%': '%',
-      p: _p, uptime, muptime,
-      me: conn.user.name,
-      npmname: package.name,
-      npmdesc: package.description,
-      version: package.version,
-      exp: exp - min,
-      maxexp: xp,
-      totalexp: exp,
-      xp4levelup: max - exp,
-      github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
-      level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
-      readmore: readMore
-    }
-    text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    conn.reply(m.chat, text.trim(), m)
-  } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
-    throw e
-  }
+       let { exp, limit, registered, regTime, level, role } = global.DATABASE.data.users[m.sender]
+    let { min, xp, max } = levelling.xpRange(level, global.multiplier)
+       let _uptime = process.uptime() * 1000
+ conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
+        "listMessage": {
+          "title": `
+*Oi Bro ${ucapanWaktu}*
+*👤Name:* ${name}
+*👑Level:* ${level}
+*💳Money:* ${limit}$
+*💎Role:* ${role}
+*⌚Time:* ${timer}
+*🌏Universel Time:* ${time}
+*📡Server:* Digital Ocean
+*📦Framework:* Nodejs
+*🦄Webinfo:* Baileyes
+*🗃️Storage:* 14/16GB`.trim(),
+          "description": "Click And Select Your option 🔮",
+          "footerText": "©Team MA",
+          "buttonText": "Click Here",
+          "listType": "SINGLE_SELECT",
+          "sections": [
+            {
+              "rows": [
+                {
+                  "title": `ALLMENU`,
+                  "description": "",
+                  "rowId": ".allmenu"     
+                }, {       
+                  "title": `GROUPINFO`,
+                  "description": "",
+                  "rowId": ".groupinfo" 
+                }, {
+                  "title": `BOTRULES`,
+                  "description": "",
+                  "rowId": ".rules"          
+                 }, {
+                  "title": `PROFILE`,
+                  "description": "",
+                  "rowId": ".profile"
+                 }, {
+                  "title": `INFO`,
+                  "description": "",
+                  "rowId": ".info"
+                 }, {
+                  "title": `OWNER`,
+                  "description": "",
+                  "rowId": ".owner"
+                 }, {
+                  "title": `CREATORS`,
+                  "description": "",
+                  "rowId": ".creators"                
+                }
+              ]
+            }
+          ], "contextInfo": {
+            "stanzaId": m.key.id,
+            "participant": m.sender,
+            "quotedMessage": m.message
+          }
+        }
+      }, {}), { waitForAck: true })
+      }
 }
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
@@ -171,7 +120,7 @@ handler.admin = false
 handler.botAdmin = false
 
 handler.fail = null
-handler.exp = 3
+handler.exp = 100
 
 module.exports = handler
 
